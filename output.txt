@@ -1,0 +1,41 @@
+"a*a+a*a+(a*(a+a)*a)" string is accepted.
+
+-----------< Derivation >-----------
+
+E -> E+T -> E+F -> E+(E) -> E+(T) -> E+(T*F)
+ -> E+(T*a) -> E+(T*F*a) -> E+(T*(E)*a) -> E+(T*(E+T)*a)
+ -> E+(T*(E+F)*a) -> E+(T*(E+a)*a) -> E+(T*(T+a)*a) -> E+(T*(F+a)*a)
+ -> E+(T*(a+a)*a) -> E+(F*(a+a)*a) -> E+(a*(a+a)*a) -> E+T+(a*(a+a)*a)
+ -> E+T*F+(a*(a+a)*a) -> E+T*a+(a*(a+a)*a) -> E+F*a+(a*(a+a)*a) -> E+a*a+(a*(a+a)*a)
+ -> T+a*a+(a*(a+a)*a) -> T*F+a*a+(a*(a+a)*a) -> T*a+a*a+(a*(a+a)*a) -> F*a+a*a+(a*(a+a)*a)
+ -> a*a+a*a+(a*(a+a)*a)
+
+--------------< Tree >--------------
+
+                  E 
+                E + T 
+                E + F 
+              E + ( E ) 
+              E + ( T ) 
+            E + ( T * F ) 
+            E + ( T * a ) 
+          E + ( T * F * a ) 
+        E + ( T * ( E ) * a ) 
+      E + ( T * ( E + T ) * a ) 
+      E + ( T * ( E + F ) * a ) 
+      E + ( T * ( E + a ) * a ) 
+      E + ( T * ( T + a ) * a ) 
+      E + ( T * ( F + a ) * a ) 
+      E + ( T * ( a + a ) * a ) 
+      E + ( F * ( a + a ) * a ) 
+      E + ( a * ( a + a ) * a ) 
+    E + T + ( a * ( a + a ) * a ) 
+  E + T * F + ( a * ( a + a ) * a ) 
+  E + T * a + ( a * ( a + a ) * a ) 
+  E + F * a + ( a * ( a + a ) * a ) 
+  E + a * a + ( a * ( a + a ) * a ) 
+  T + a * a + ( a * ( a + a ) * a ) 
+T * F + a * a + ( a * ( a + a ) * a ) 
+T * a + a * a + ( a * ( a + a ) * a ) 
+F * a + a * a + ( a * ( a + a ) * a ) 
+a * a + a * a + ( a * ( a + a ) * a ) 
